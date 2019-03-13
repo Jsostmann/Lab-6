@@ -7,6 +7,7 @@
 package lab.pkg6;
 
 import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileSystemView;
@@ -289,7 +290,8 @@ public class PlayerFrame extends javax.swing.JFrame {
     }
     
     private void sortData() {
-       Collections.sort(playList.getPlayList(), (Song f1, Song f2) -> new Integer(f1.getDuration()).compareTo(f2.getDuration()));
+      	Collections.sort(playList.getPlayList(), (Song o1, Song o2) -> o2.getTitle().toLowerCase().charAt(0) - o1.getTitle().toLowerCase().charAt(0));
+	
 
     }
     
